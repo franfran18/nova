@@ -1,0 +1,202 @@
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
+  padding: 2rem;
+}
+
+.loadingSpinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #333333;
+  border-top-color: #BCF49D;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.iconContainer {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+}
+
+.description {
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+.connectButton {
+  background: #BCF49D;
+  border: none;
+  color: #000000;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  width: fit-content;
+}
+
+.connectButton:hover {
+  background: #9ACD32;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(188, 244, 157, 0.3);
+}
+
+.connectButton:active {
+  transform: translateY(0);
+}
+
+.hint {
+  font-size: 0.875rem;
+  color: #a0a0a0;
+  margin: 0;
+}
+
+.link {
+  color: #BCF49D;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #9ACD32;
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+    min-height: calc(100vh - 70px);
+    background: #1a1a1a;
+  }
+
+  .content {
+    max-width: 90%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    color: #a0a0a0;
+  }
+
+  .connectButton {
+    padding: 9px 24px;
+    font-size: 0.88rem;
+    margin-bottom: 1.5rem;
+    background: #BCF49D;
+    color: #000000;
+  }
+
+  .connectButton:hover {
+    background: #9ACD32;
+  }
+
+  .hint {
+    font-size: 0.8rem;
+    color: #a0a0a0;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+    min-height: calc(100vh - 70px);
+    background: #1a1a1a;
+  }
+
+  .content {
+    max-width: 95%;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+    color: #a0a0a0;
+  }
+
+  .connectButton {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+    background: #BCF49D;
+    color: #000000;
+  }
+
+  .connectButton:hover {
+    background: #9ACD32;
+  }
+
+  .hint {
+    font-size: 0.75rem;
+    color: #a0a0a0;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .iconContainer {
+    margin-bottom: 1rem;
+  }
+}

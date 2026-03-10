@@ -1,0 +1,1034 @@
+.dashboard {
+  min-height: calc(100vh - 80px);
+  background: #1a1a1a;
+  padding: 1.5rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Styles */
+.section {
+  margin: 0 clamp(0.5rem, 2vw, 1.5rem) 2rem clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.sectionTitle {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+}
+
+.sectionSubtitle {
+  font-size: 0.95rem;
+  color: #a0a0a0;
+  margin: 0;
+}
+
+.divider {
+  height: 1px;
+  background: #333333;
+  margin: 2rem 0;
+}
+
+/* Protocol Stats */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.statCard {
+  background: #2a2a2a;
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid #333333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.statCard:hover {
+  border-color: #444444;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.statHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: #a0a0a0;
+  font-weight: 500;
+}
+
+.statIcon {
+  display: none;
+  width: 16px;
+  height: 16px;
+  color: #BCF49D;
+}
+
+.statValue {
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.statUSDValue {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #BCF49D;
+  line-height: 1.2;
+  margin-top: 0.25rem;
+}
+
+/* Gate Info Section */
+.gateInfoSection {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.gateCard {
+  background: #BCF49D;
+  color: #000000;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #9ACD32;
+  box-shadow: 0 2px 8px rgba(188, 244, 157, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.gateLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.gateName {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: #000000;
+}
+
+.gateAddress {
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0.7;
+  font-family: monospace;
+}
+
+.deploymentStatsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+/* Create Savings Section */
+.createSavingsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2a2a2a;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #333333;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.createSavingsContent {
+  flex: 1;
+  min-width: 300px;
+}
+
+.createSavingsContent h2 {
+  margin-bottom: 0.5rem;
+}
+
+.addSavingsBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #BCF49D;
+  color: #000000;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.addSavingsBtn:hover {
+  background: #9ACD32;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(188, 244, 157, 0.3);
+}
+
+/* User Stats */
+.userStatsContainer {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.totalSavingsSection {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: #2a2a2a;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #333333;
+}
+
+.totalSavingsContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.totalSavingsLabel {
+  font-size: 0.875rem;
+  color: #a0a0a0;
+  font-weight: 500;
+}
+
+.totalSavingsAmount {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.totalSavingsUSD {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #BCF49D;
+  line-height: 1.2;
+}
+
+.totalSavingsDescription {
+  font-size: 0.875rem;
+  color: #a0a0a0;
+  margin: 0.75rem 0 0 0;
+  line-height: 1.5;
+  max-width: none;
+}
+
+.userStatsAddBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #BCF49D;
+  color: #000000;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.userStatsAddBtn:hover {
+  background: #9ACD32;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(188, 244, 157, 0.3);
+}
+
+.userStatsRightSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 200px;
+}
+
+/* User Info */
+.userInfoCard {
+  background: #2a2a2a;
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid #333333;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.userInfoLabel {
+  font-size: 0.875rem;
+  color: #a0a0a0;
+  font-weight: 500;
+}
+
+.userInfoValue {
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Positions Grid */
+.chartSectionTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 clamp(1.5rem, 3vw, 2.5rem) 0;
+}
+
+.chartContainer {
+  background-color: #2a2a2a;
+  border-radius: 18px;
+  padding: clamp(0.5rem, 2vw, 1.5rem) clamp(0.4rem, 3vw, 1rem);
+  width: 100%;
+  max-width: 100%;
+  height: clamp(160px, 40vh, 400px);
+  outline: none;
+  border: none;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+.chartSkeletonContainer {
+  background-color: #2a2a2a;
+  border-radius: 18px;
+  padding: clamp(0.5rem, 2vw, 1.5rem) clamp(0.4rem, 3vw, 1rem);
+  width: 100%;
+  max-width: 100%;
+  height: clamp(160px, 40vh, 400px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.chartSkeleton {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #333333 25%,
+    #3f3f42 50%,
+    #333333 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.positionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0.75rem;
+}
+
+.positionCard {
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  background: rgba(188, 244, 157, 0.07);
+}
+
+.positionCard:hover {
+  box-shadow: 0 10px 30px rgba(188, 244, 157, 0.15);
+  transform: translateY(-4px);
+  background: rgba(188, 244, 157, 0.12);
+}
+
+.positionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.positionBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  flex: 1;
+}
+
+.positionColor {
+  width: 8px;
+  height: 16px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.positionName {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.activeBadge {
+  display: none;
+}
+
+.inactiveBadge {
+  display: none;
+}
+
+.positionAmount {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.progressSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.progressLabel {
+  font-size: 0.875rem;
+  color: #a0a0a0;
+  font-weight: 500;
+}
+
+.progressBar {
+  width: 100%;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.34);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(188, 244, 157, 0.9);
+  transition: width 0.5s ease;
+}
+
+.positionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.timeRemaining {
+  font-size: 0.875rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.dateRange {
+  font-size: 0.8rem;
+  color: #707070;
+}
+
+.positionActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  justify-content: flex-start;
+}
+
+.actionBtn {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 0.9rem 1.2rem;
+  background: #2a2a2a;
+  border: 1.5px solid #444444;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.actionBtn:hover {
+  background: #3a3a3a;
+  border-color: #555555;
+}
+
+.actionBtn:active {
+  transform: scale(0.98);
+}
+
+.actionBtn.withdraw {
+  background: #1f1f1f;
+  border-color: #333333;
+  color: #ffffff;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.9rem;
+}
+
+.actionBtn.withdraw:hover {
+  background: #2a2a2a;
+  border-color: #444444;
+}
+
+.actionBtn.topup {
+  background: #BCF49D;
+  border-color: #BCF49D;
+  color: #000000;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.9rem;
+}
+
+.actionBtn.topup:hover {
+  background: #9ACD32;
+  border-color: #9ACD32;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #2a2a2a;
+  border-radius: 12px;
+  border: 1px dashed #333333;
+}
+
+.emptyState p {
+  color: #a0a0a0;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .gateInfoSection {
+    grid-template-columns: 1fr;
+  }
+
+  .deploymentStatsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .createSavingsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .positionsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1.5rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section {
+    margin: 0 clamp(0.5rem, 2vw, 1.5rem) 2rem clamp(0.5rem, 2vw, 1.5rem);
+  }
+
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+
+  .chartSectionTitle {
+    font-size: 1rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .statCard {
+    padding: 1rem;
+  }
+
+  .statLabel {
+    font-size: 0.8rem;
+  }
+
+  .statValue {
+    font-size: 1.2rem;
+  }
+
+  .statUSDValue {
+    font-size: 0.75rem;
+  }
+
+  .gateInfoSection {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gateCard {
+    padding: 1.25rem;
+  }
+
+  .gateName {
+    font-size: 1.25rem;
+  }
+
+  .deploymentStatsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .createSavingsHeader {
+    padding: 1.5rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 0.9rem;
+  }
+
+  .addSavingsBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 24px;
+  }
+
+  .userStatsContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .totalSavingsSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .totalSavingsLabel {
+    font-size: 0.85rem;
+  }
+
+  .totalSavingsAmount {
+    font-size: 1.5rem;
+  }
+
+  .totalSavingsDescription {
+    max-width: 100%;
+    font-size: 0.85rem;
+  }
+
+  .userStatsAddBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 24px;
+  }
+
+  .userStatsRightSection {
+    flex-direction: row;
+    gap: 1rem;
+    min-width: auto;
+  }
+
+  .userInfoCard {
+    padding: 1rem;
+    flex: 1;
+  }
+
+  .userInfoLabel {
+    font-size: 0.8rem;
+  }
+
+  .userInfoValue {
+    font-size: 1.1rem;
+  }
+
+  .positionsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .positionCard {
+    padding: 1.25rem;
+  }
+
+  .positionName {
+    font-size: 0.9rem;
+  }
+
+  .positionAmount {
+    font-size: 1.3rem;
+  }
+
+  .positionActions {
+    gap: 0.5rem;
+  }
+
+  .actionBtn {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.8rem;
+    flex: 1 1 0;
+  }
+
+  .progressBar {
+    height: 18px;
+  }
+
+  .timeRemaining {
+    font-size: 0.85rem;
+  }
+
+  .dateRange {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 1rem 0;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .section {
+    margin: 0 clamp(0.5rem, 2vw, 1.5rem) 1.5rem clamp(0.5rem, 2vw, 1.5rem);
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .chartSectionTitle {
+    font-size: 0.95rem;
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .statCard {
+    padding: 0.875rem;
+  }
+
+  .statHeader {
+    margin-bottom: 0.75rem;
+  }
+
+  .statLabel {
+    font-size: 0.75rem;
+  }
+
+  .statValue {
+    font-size: 1.1rem;
+  }
+
+  .statUSDValue {
+    font-size: 0.7rem;
+  }
+
+  .gateInfoSection {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .gateCard {
+    padding: 1rem;
+  }
+
+  .gateLabel {
+    font-size: 0.8rem;
+  }
+
+  .gateName {
+    font-size: 1.1rem;
+  }
+
+  .gateAddress {
+    font-size: 0.8rem;
+  }
+
+  .deploymentStatsGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .createSavingsHeader {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .createSavingsContent h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 0.85rem;
+  }
+
+  .addSavingsBtn {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .userStatsContainer {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .totalSavingsSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .totalSavingsLabel {
+    font-size: 0.8rem;
+  }
+
+  .totalSavingsAmount {
+    font-size: 1.3rem;
+  }
+
+  .totalSavingsUSD {
+    font-size: 0.85rem;
+  }
+
+  .totalSavingsDescription {
+    font-size: 0.8rem;
+    max-width: 100%;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .userStatsAddBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .userStatsRightSection {
+    flex-direction: column;
+    gap: 0.75rem;
+    min-width: auto;
+  }
+
+  .userInfoCard {
+    padding: 0.875rem;
+    flex: 1;
+  }
+
+  .userInfoLabel {
+    font-size: 0.75rem;
+  }
+
+  .userInfoValue {
+    font-size: 1rem;
+  }
+
+  .positionCard {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .positionHeader {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .positionBadge {
+    flex-basis: 100%;
+    margin-bottom: 0;
+  }
+
+  .positionName {
+    font-size: 0.85rem;
+  }
+
+  .positionAmount {
+    font-size: 1.15rem;
+  }
+
+  .progressSection {
+    gap: 0.4rem;
+  }
+
+  .progressLabel {
+    font-size: 0.75rem;
+  }
+
+  .progressBar {
+    height: 16px;
+  }
+
+  .positionInfo {
+    gap: 0.2rem;
+  }
+
+  .timeRemaining {
+    font-size: 0.75rem;
+  }
+
+  .dateRange {
+    font-size: 0.7rem;
+  }
+
+  .positionActions {
+    gap: 0.4rem;
+    margin-top: 0.4rem;
+  }
+
+  .actionBtn {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+    gap: 0.2rem;
+    flex: 1 1 0;
+  }
+
+  .actionBtn svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  .emptyState {
+    padding: 2rem 1rem;
+  }
+
+  .emptyState p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .dashboard {
+    padding: 0.75rem 0;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .section {
+    margin: 0 clamp(0.4rem, 2vw, 1.5rem) 1.5rem clamp(0.4rem, 2vw, 1.5rem);
+  }
+
+  .sectionTitle {
+    font-size: 0.95rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statCard {
+    padding: 0.75rem;
+  }
+
+  .statValue {
+    font-size: 1rem;
+  }
+
+  .gateCard {
+    padding: 0.875rem;
+  }
+
+  .gateName {
+    font-size: 1rem;
+  }
+
+  .addSavingsBtn,
+  .userStatsAddBtn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .totalSavingsAmount {
+    font-size: 1.1rem;
+  }
+
+  .positionCard {
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .positionAmount {
+    font-size: 1rem;
+  }
+
+  .actionBtn {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.65rem;
+    flex: 1 1 0;
+  }
+
+  .actionBtn svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+  }
+
+  .positionName {
+    font-size: 0.8rem;
+  }
+
+  .timeRemaining {
+    font-size: 0.7rem;
+  }
+
+  .dateRange {
+    font-size: 0.65rem;
+  }
+}

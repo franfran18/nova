@@ -1,0 +1,9 @@
+target
+.snfoundry_cache/
+snfoundry_trace/
+coverage/
+profile/
+Helper.md
+snfoundry.toml
+tests/
+.env
