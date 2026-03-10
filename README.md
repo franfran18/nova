@@ -472,4 +472,4 @@ Each user's principal decreased fairly—losses were distributed proportionally 
 - **Website:** [https://nova-two-kappa.vercel.app/]
 - **Project Repository & Summary:** [https://github.com/franfran18/nova/tree/main]
 
-- **Demo Video:** [Link to be added]
+- **Demo Video:** [https://youtu.be/NC6IOSK2cug]
