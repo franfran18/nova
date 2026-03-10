@@ -86,15 +86,72 @@ Your earned yield is added to your principal, increasing your total position val
 
 ### **Gate**
 
-A yield strategy adapter that bridges Nova to external DeFi protocols. It:
+A yield strategy adapter that bridges Nova to external DeFi protocols through a standardized interface (`i_gate`). It:
 
 - Wraps one or more external yield protocols
-- Is swappable, Nova maintains one active gate at a time
+- Is swappable—Nova maintains one active gate at a time
 - Deploys Nova's wBTC into yield strategies (e.g., staking pools, lending protocols)
 - Earns returns and reports them back to Nova's yield pool
 - Can be changed when a better strategy emerges
 
-Example could be a gate that connects Nova to yield on Ekubo, Vesu and other yield protocols.
+Example could be a gate that connects Nova to yield on Ekubo, Vesu and other yield protocols or even a startegy of a mix of different protocols.
+
+#### **The `i_gate` Interface**
+
+Every gate must implement the `i_gate` interface, which standardizes how Nova communicates with yield strategies. This allows gates to be swappable and composable.
+
+**Core Storage Model:**
+
+- **`current_value`** – The real-time value the gate holds. Represents the deployed principal (adjusted for any losses). Increases on `deposit()`, decreases on `withdraw()` and when losses occur. This is the single source of truth for what's currently in the external protocol.
+
+**Required Methods:**
+
+1. **`deposit(amount: u256) -> bool`**
+   - Deploys `amount` of wBTC into the external yield protocol
+   - Increases `current_value` by the amount
+   - Only callable by Nova Core
+   - Returns `true` on success
+
+2. **`withdraw(amount: u256) -> bool`**
+   - Withdraws `amount` from the external protocol back to Nova Core
+   - Decreases `current_value` by the amount
+   - Returns `true` on success
+
+3. **`current_value() -> u256`**
+   - Returns the real-time value of all assets the gate holds
+   - Reflects principal minus any losses (never increases from gains)
+   - Used by Nova to calculate share value and detect losses
+
+4. **`pending_yield() -> u256`**
+   - Returns accrued yield in the external protocol that hasn't been harvested yet
+   - This is yield earned but not yet sent to Nova's yield pool
+   - Allows Nova to preview expected returns
+
+5. **`harvest() -> u256`**
+   - A manual way to collects all pending yield from the external protocols
+   - Sends harvested yield directly to Nova's yield pool
+   - Returns the amount harvested in this call
+   - Called periodically by Nova during state changing functions that interact with the gate.
+
+6. **`asset() -> ContractAddress`**
+   - Returns the ERC-20 token address this gate accepts and returns
+   - Always wBTC for Nova's gates
+
+7. **`apply_loss(amount: u256)`**
+   - Applies a loss occured in any of the external protocols associated with the gate by reducing `current_value`
+   - Automatically triggers loss socialization across all Nova positions via position share value adjustment
+
+**How Gates Work with Nova:**
+
+When Nova deploys capital to a gate:
+
+1. Nova calls `deposit(amount)`, transferring wBTC to the gate
+2. The gate wraps this into its external protocol (e.g., Ekubo, Vesu)
+3. As the external protocol earns, the gate accumulates yield internally
+4. Nova periodically calls `harvest()` or state changing functions that interact with gate to extract accrued yield → goes to yield pool
+5. If the external protocol loses value, `current_value` decreases → Nova detects it via share value drop
+6. When Nova needs liquidity, it calls `withdraw(amount)` to pull from the gate
+7. After each deposit/withdrawal, Nova rebalances to maintain 25% deployment always to the gate
 
 ---
 
