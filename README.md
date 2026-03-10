@@ -138,7 +138,7 @@ Add more wBTC to an existing position without creating a new one. Your principal
 
 ## User Interaction Flow
 
-![Nova Protocol Flow](images/Nova-Protocol-Flow.png)
+![Nova Protocol Flow](contracts/images/Nova-Protocol-Flow.png)
 
 When you deposit wBTC into Nova, you specify both an amount and a commitment duration—Nova creates a position that represents your stake in the protocol. You can have up to 7 positions simultaneously, letting you stack different commitment lengths or goals.
 
