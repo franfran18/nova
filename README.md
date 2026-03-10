@@ -467,10 +467,9 @@ Each user's principal decreased fairly—losses were distributed proportionally 
 
 ## Project Links
 
-- **Nova Core Contract:** [Link to be added]
+- **Nova Core Contract:** [https://sepolia.voyager.online/contract/0x0693dcf1e10bcc08db60e8b9d7b1d0a4021c2aa3424f827fb0f4445b10f11dbb]
 
-- **Website:** [Link to be added]
-- **Frontend Repository:** [Link to be added]
-- **Smart Contract Repository:** [Link to be added]
+- **Website:** [https://nova-two-kappa.vercel.app/]
+- **Project Repository & Summary:** [https://github.com/franfran18/nova/tree/main]
 
 - **Demo Video:** [Link to be added]
