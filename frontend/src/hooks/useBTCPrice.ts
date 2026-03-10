@@ -10,16 +10,11 @@ export function useBTCPrice() {
       try {
         setIsLoading(true);
 
-        // Use Alchemy Prices API with Bearer token
+        // Use Alchemy Prices API with API key in URL
         const alchemyApiKey = import.meta.env.VITE_ALCHEMY_API_KEY;
         if (alchemyApiKey && alchemyApiKey !== "demo") {
           const alchemyResponse = await fetch(
-            `https://api.g.alchemy.com/prices/v1/tokens/by-symbol?symbols=BTC`,
-            {
-              headers: {
-                "Authorization": `Bearer ${alchemyApiKey}`,
-              },
-            }
+            `https://api.g.alchemy.com/prices/v1/${alchemyApiKey}/tokens/by-symbol?symbols=BTC`
           );
 
           if (alchemyResponse.ok) {
