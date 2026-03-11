@@ -10,6 +10,18 @@ At its core, Nova creates a **fair and incentive-aligned ecosystem** where:
 
 ---
 
+### Core Problems Solved:
+
+- Bitcoin Yield Generation: Enables wBTC holders to earn yield on Bitcoin , addressing the lack of Bitcoin-native yield opportunities.
+
+- Incentivized Long-Term Commitment: Uses a weighted distribution model to reward users who commit capital for longer periods and in larger amounts. This solves liquidity fragmentation by encouraging sustained capital provisioning.
+
+- Flexible Exit At Any Time: Provides early withdrawal options with time-based penalties which reduces a users near their lock up period, which incentivizes commitment adherence without permanent lockups. Penalties flow to remaining holders if users exit early, rewarding those who honor their commitments.
+
+- Pluggable Yield Strategies: The "gate" adapter interface allows connecting different yield-generating strategies (lending, staking, etc.) without core protocol changes while allowing users to gain from these yield sources without having to build out their own stratgeies and also earning yield via our early exit yield generation strategies
+
+---
+
 ## Key Concepts & Terminology
 
 Before diving into how Nova works, here are the core terms you need to know:
